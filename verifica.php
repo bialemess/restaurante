@@ -33,6 +33,12 @@
             cursor: pointer;
             border-radius: 5px;
             font-size: 20px;
+           display: block;
+           text-align: center;
+           align-items: center;
+              justify-content: center;
+
+
         }
          .menu-button:hover {
             background-color: #555;
@@ -49,11 +55,16 @@
             width: 80%;
             background-color: #fff;
             margin-top: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            
         }
         th, td {
             border: 1px solid #ddd;
             padding: 16px;
             text-align: center;
+            align-items: center;
+            justify-content: center;
+
         }
         th {
             background-color: #f2f2f2;
@@ -210,7 +221,9 @@
                 echo "<td class='editable' contenteditable='true' data-column='precoPrato'> " . $row['precoPrato'] . "</td>";
                 echo "<td class='editable' contenteditable='true' data-column='ingredientesPrato'>" . $row['ingredientesPrato'] . "</td>";
                 echo "<td class='editable' contenteditable='true' data-column='pesoPrato'>" . $row['pesoPrato'] . "</td>";
-                echo "<td class='editable' contenteditable='true' data-column='imagemPrato'><img src='upload/pratos/" . $row['imagemPrato'] . "' width='100px'></td>";
+                echo "<td class='editable' contenteditable='true' data-column='imagemPrato'>    <img src='upload/pratos/" . $row['imagemPrato'] . "' width='100px'></td>";
+
+
 
                 echo "<td>";
                 echo "<button class='menu-button edit-button' onclick='toggleEdit(this)'>Editar</button>";
@@ -253,6 +266,8 @@ echo "<td>";
         }
 
         confirmButton.style.display = "block";
+         
+
         editButton.style.display = "none";
     }
 
@@ -308,6 +323,8 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("beforeunload", function() {
         document.getElementById("error-message").style.display = "none";
     });
+      
+
 });</script>
 
 </body>

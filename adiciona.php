@@ -177,7 +177,7 @@
                 </div>
                 <div class="form-row">
                     <label for="foto">Selecionar Imagem:</label>
-                    <input type="file" name="foto" id="foto" accept="image/*" required>
+                    <input type="file" name="imagemPrato" id="imagemPrato" accept="image/*" required>
                 </div>
                 <div class="form-row">
                     <button type="submit" class="btn-submit">Inserir</button>
@@ -198,8 +198,10 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
         $pesoPrato = isset($_POST['pesoPrato']) ? (int) $_POST['pesoPrato'] : 0;
 
         $uploadDir = 'upload/pratos/';
+        $uploadfile = "";
 
-        $foto = isset($_FILES['foto']) ? $_FILES['foto'] : null;
+        $foto = isset($_FILES['imagemPrato']) ? $_FILES['imagemPrato'] : null;
+
 
         // Verifica se o campo nomePrato está vazio
         if (trim($nomePrato) == "") {
@@ -251,7 +253,15 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
 }
 ?>
 
+    
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    window.addEventListener("beforeunload", function() {
+        document.getElementById("error-message").style.display = "none";
+    });
+      
 
+});</script>
 
 </body>
 </html>
